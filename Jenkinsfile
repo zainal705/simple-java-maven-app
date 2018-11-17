@@ -2,17 +2,9 @@ pipeline {
   agent any
   stages {
     stage('Build') {
-      parallel {
-        stage('Build') {
-          steps {
-            sh 'mvn clean package'
-          }
-        }
-        stage('') {
-          steps {
-            sh 'file 29'
-          }
-        }
+      steps {
+        sh 'mvn clean package'
+        sh 'file 29'
       }
     }
     stage('Test') {
